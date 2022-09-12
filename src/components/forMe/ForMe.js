@@ -6,8 +6,9 @@ import mobileWeb from '../../resources/icons/about_me/mobile_dev.svg';
 import webDev from '../../resources/icons/about_me/web_development.svg';
 
 import { Container } from "../theme/Container";
-import { TitleAverage, Title, Description } from "../theme/Title";
+import { TitleAverage, Title, TitleLittle, Description } from "../theme/Title";
 import { Divider } from '../theme/Divider';
+import SkillsImg from '../theme/SkillsImg';
 
 const ForMeSection = styled(Container)`
   padding-top: 120px;
@@ -36,11 +37,7 @@ const DividerForMe = styled(Divider)`
 const TitleBig = styled(Title)`
   font-size: 36px;
 `
-const TitleLittle = styled(Title)`
-  font-size: 14px;
-  line-height: 21px;
 
-`
 const DescriptionAverage = styled(Description)`
 margin-top: 20px;
 font-size: 14px;
@@ -63,29 +60,28 @@ const SkillsItem = styled.div`
   height: 116px;
 `
 
-const CircleWrapp = styled.div`
-  position: relative;
-  padding: 14px 0 0 15px;
-  z-index: 2;
-  &:before 
-  {
-      ${props => props.circle || props.theme.circle}
-      top: 0;
-      left: 0;
+// const CircleWrapp = styled.div`
+//   position: relative;
+//   padding: 14px 0 0 15px;
+//   z-index: 2;
+//   &:before 
+//   {
+//       ${props => props.circle || props.theme.circle}
+//       top: 0;
+//       left: 0;
 
-  };
-`
+//   };
+// `
 
 
-const SkillsFoto = styled.img.attrs(prop => ({ src: prop.img, }))`
-`
+// const SkillsFoto = styled.img.attrs(prop => ({ src: prop.img, }))`
+// `
 
 const SkillsItemComponent = ({ img, title, description }) => {
   return (
     <SkillsItem>
-      <CircleWrapp>
-        <SkillsFoto img={img} />
-      </CircleWrapp>
+      <SkillsImg img={img} />
+
       <div>
         <TitleLittle>{title}</TitleLittle>
         <Description>{description}</Description>

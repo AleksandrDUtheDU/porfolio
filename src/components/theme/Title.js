@@ -21,6 +21,12 @@ export const TitleAverage = styled(Title)`
 
     };
 `
+
+export const TitleLittle = styled(Title)`
+  font-size: 14px;
+  line-height: 21px;
+`
+
 export const Description = styled.p`
     margin-top: 10px;
     font-weight: 500;
