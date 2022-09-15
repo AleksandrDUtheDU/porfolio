@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { TitleAverage, Title, TitleLittle, Description } from "../theme/Title";
-import { Container } from "../theme/Container";
+import { TitleAverage, Title, TitleLittle, TitleSection, Description } from "../theme/Title";
+import { Section } from "../theme/Container";
 import { Divider } from '../theme/Divider';
 import SkillsImg from '../theme/SkillsImg';
 
@@ -11,28 +11,9 @@ import developer from '../../resources/icons/experience/developer.svg';
 import designer from '../../resources/icons/experience/designer.svg';
 
 
-const MySoftSkillSection = styled(Container)`
-  padding-top: 120px;
-  /* align-items: center; */
-  text-align: center;
-  
-`
-
-const TitleMySoftSkill = styled(TitleAverage)`
-  padding: 0;
-    &:before 
-    {
-        top: -25%;
-        left: 50%;
-        transform: translateX(-50%);
-    };
-`
-
 const MySoftSkillWrapp = styled.div`
   margin-top: 70px;
   display: grid;
-  //align-items: center;
-  //justify-items: center;
   justify-content: center;
   grid-template-columns: repeat(2, 425px);
   grid-template-rows: 380px;
@@ -57,7 +38,6 @@ const TitleMySoftSkillWrapp = styled(TitleAverage)`
         left: -50px;
         height: 15px;
         width: 15px;
-        /* transform: translateX(-50%); */
     };
 `
 
@@ -125,8 +105,8 @@ const ItemMySoftSkillComponent = ({ img, title, subTitle, descr, link, titleLink
 
 function MySoftSkill() {
   return (
-    <MySoftSkillSection as="section">
-      <TitleMySoftSkill as="h2">Опыт</TitleMySoftSkill>
+    <Section as="section">
+      <TitleSection as="h2">Опыт</TitleSection>
       <Title>Чем я буду полезен</Title>
       <Divider />
       <MySoftSkillWrapp>
@@ -167,7 +147,7 @@ function MySoftSkill() {
           </ul>
         </MySoftSkillWrappCollum>
       </MySoftSkillWrapp>
-    </MySoftSkillSection>
+    </Section>
   );
 }
 

@@ -5,3 +5,8 @@ export const Container = styled.div`
     margin: 0 auto;
     padding: 25px;
 `;
+
+export const Section = styled(Container)`
+  padding-top: 120px;
+  text-align: center;
+`

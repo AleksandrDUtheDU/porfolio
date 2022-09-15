@@ -27,6 +27,16 @@ export const TitleLittle = styled(Title)`
   line-height: 21px;
 `
 
+export const TitleSection = styled(TitleAverage)`
+  padding: 0;
+    &:before 
+    {
+        top: -25%;
+        left: 50%;
+        transform: translateX(-50%);
+    };
+`
+
 export const Description = styled.p`
     margin-top: 10px;
     font-weight: 500;

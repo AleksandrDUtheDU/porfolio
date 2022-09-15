@@ -16,13 +16,13 @@ const ImgCircleWrapp = styled.div`
     };
 `
 
-const SkillsFoto = styled.img.attrs(prop => ({ src: prop.img, }))`
+export const SkillsImgSrc = styled.img.attrs(prop => ({ src: prop.img, alt: `${prop.img.slice(14).split('.')[0]}` }))`
 `
 
 const SkillsImg = ({ img }) => {
     return (
         <ImgCircleWrapp>
-            <SkillsFoto img={img} />
+            <SkillsImgSrc img={img} />
         </ImgCircleWrapp>
     )
 }
