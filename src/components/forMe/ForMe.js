@@ -60,23 +60,6 @@ const SkillsItem = styled.div`
   height: 116px;
 `
 
-// const CircleWrapp = styled.div`
-//   position: relative;
-//   padding: 14px 0 0 15px;
-//   z-index: 2;
-//   &:before 
-//   {
-//       ${props => props.circle || props.theme.circle}
-//       top: 0;
-//       left: 0;
-
-//   };
-// `
-
-
-// const SkillsFoto = styled.img.attrs(prop => ({ src: prop.img, }))`
-// `
-
 const SkillsItemComponent = ({ img, title, description }) => {
   return (
     <SkillsItem>

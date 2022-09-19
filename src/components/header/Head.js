@@ -49,6 +49,3 @@ function Head() {
 }
 
 export default Head;
-
-
-// className="title title_fz16 head__circle"

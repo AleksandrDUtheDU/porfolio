@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Head from '../header/Head';
 import SocialPanel from '../socialPanel/SocialPanel';
 import NavState from '../hamburger/navState';
@@ -6,20 +8,47 @@ import ForMe from '../forMe/ForMe';
 import MySoftSkill from '../mySoftSkill/MySoftSkill';
 import MyHardSkill from '../myHardSkill/MyHardSkill';
 import MyWorks from '../myWorks/MyWorks';
+import Prises from '../prises/Prises';
+import Contact from '../contact/Contact';
+import Politics from '../Politics/Politics';
 
-function App() {
+function MainPage() {
   return (
-    <div className="App">
-      <SocialPanel />
-      <NavState>
-        <MainMenu />
-      </NavState>
+    <>
       <Head />
       <ForMe />
       <MySoftSkill />
       <MyHardSkill />
       <MyWorks />
-    </div>
+      <Prises />
+      <Contact />
+
+    </>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <SocialPanel />
+      <NavState>
+        <MainMenu />
+      </NavState>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/privacy" element={<Politics />} />
+      </Routes>
+
+      {/* <Head />
+      <ForMe />
+      <MySoftSkill />
+      <MyHardSkill />
+      <MyWorks />
+      <Prises />
+      <Contact /> */}
+      {/* <Politics /> */}
+
+    </Router>
   );
 }
 

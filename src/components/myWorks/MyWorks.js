@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { TitleLittle, Title, TitleSection, TitleAverage, Description } from "../theme/Title";
+import { Title, TitleSection } from "../theme/Title";
 import { Section } from "../theme/Container";
 import { Divider } from '../theme/Divider';
 import { SkillsImgSrc } from '../theme/SkillsImg';
@@ -18,8 +18,6 @@ const MyWorksWrapp = styled.div`
   margin-top: 60px;
   display: grid;
   grid-template: repeat(2, 280px) / repeat(4, 280px);
-  /* grid-template-columns: repeat(4, 280px);
-  grid-template-rows: repeat(2, 280px); */
   gap: 5px;
 `
 

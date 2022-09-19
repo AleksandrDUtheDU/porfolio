@@ -70,7 +70,7 @@ export const MenuLink = styled.a`
     }
 `;
 
-export const SocialLink = styled.div`
+const SocialLink = styled.div`
     position:absolute;
     width: 120px;
     display: flex;
