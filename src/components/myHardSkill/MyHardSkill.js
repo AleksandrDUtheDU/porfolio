@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { TitleLittle, Title, TitleSection, TitleAverage, Description } from "../theme/Title";
 import { Section } from "../theme/Container";
 import { Divider } from '../theme/Divider';
-import { SkillsImgSrc } from '../theme/SkillsImg';
+import { ImgSrc } from '../theme/SkillsImg';
 
 import html5 from '../../resources/icons/skills/html5.svg';
 import css3 from '../../resources/icons/skills/css3.svg';
@@ -26,39 +26,39 @@ const MyHardSkillWrapp = styled.div`
 `
 
 const MyHardSkillItem = styled.div`
-display: grid;
-align-items: center;
-grid-template-rows: 60px 20px 100px;
-gap: 10px;
-padding: 30px;
-height: 100%;
-width: 100%;
-text-align: left;
-border: 1px solid #000000;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 60px 20px 100px;
+  gap: 10px;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #000000;
 `
 
 const MyHardSkillPercentWrapp = styled.div`
-margin-top: 120px;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(2, 70px);
-grid-auto-rows: 70px;
-gap: 30px 45px;
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 70px);
+  grid-auto-rows: 70px;
+  gap: 30px 45px;
 `
 const MyHardSkillPercentTitleBox = styled.div`
-display: flex;
-justify-content:space-between;
+  display: flex;
+  justify-content:space-between;
 `
 
 
 const MyHardSkillPercentBox = styled.div`
-position: relative;
-margin-top: 27px;
-width: 100%;
-height: 14px;
-background: #E8E4DE;
-border-radius: 4px;
-&:before 
+  position: relative;
+  margin-top: 27px;
+  width: 100%;
+  height: 14px;
+  background: #E8E4DE;
+  border-radius: 4px;
+  &:before 
     {
       content: '';
         position: absolute;
@@ -88,7 +88,7 @@ const MyHardSkillPercentComponent = ({ title, percent }) => {
 const MyHardSkillItemComponent = ({ img, title, descr }) => {
   return (
     <MyHardSkillItem>
-      <SkillsImgSrc img={img} />
+      <ImgSrc img={img} />
       <TitleLittle>{title}</TitleLittle>
       <Description>{descr}</Description>
     </MyHardSkillItem>

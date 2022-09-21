@@ -7,26 +7,26 @@ import Github from '../sociaIcons/Github';
 
 
 import { Container } from "../theme/Container";
-import { TitleAverage, Title, TitleLittle, Description } from "../theme/Title";
+import { TitleAverage, Title, Description } from "../theme/Title";
 import { Divider } from '../theme/Divider';
 import Form from '../Form/Form';
+import { ImgSrc } from '../theme/SkillsImg';
+
 
 const ContactSection = styled(Container)`
   padding: 120px 25px 90px 25px;
   display: grid;
-  grid-template-columns: 400px 585px;
-  /* grid-template-rows: minmax(245px auto) minmax(255px auto);
-  grid-auto-rows: minmax(245px auto); */
+  grid-template-columns: 1fr 1.55fr;
+  grid-template-rows: 600px;
   justify-content: space-between;
-  /* column-gap: 70px; */
-
-  /* row-gap: 40px; */
+  column-gap: 70px;
 `
 
-const Foto = styled.img.attrs({
-  src: main_photo,
-})`
-  /* grid-row: 1/3; */
+const Foto = styled(ImgSrc)`
+width: 100%;
+height: 100%;
+object-fit: cover;
+
 `
 
 const ContactTitle = styled.div`
@@ -74,20 +74,6 @@ function ContactTitleComponent() {
       <DescriptionAverage>
         Или оставьте ваши данные и я сам вам напишу:
       </DescriptionAverage>
-      {/* <form action='#' >
-        <div>
-          <input name='name' id='name' type={'text'}></input>
-          <label for='name'></label>
-        </div>
-        <div>
-          <input name='email' id='email' type={'email'}></input>
-          <label for='email'></label>
-        </div>
-        <div>
-          <textarea name='text' id='text'  ></textarea>
-          <label for='text'></label>
-        </div>
-      </form> */}
       <Form />
 
     </ContactTitle>
@@ -98,7 +84,7 @@ function ContactTitleComponent() {
 function Contact() {
   return (
     <ContactSection as="section">
-      <Foto />
+      <Foto img={main_photo} />
       <ContactTitleComponent />
     </ContactSection>
   );

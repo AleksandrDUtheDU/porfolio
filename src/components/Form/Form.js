@@ -1,8 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
+
 
 import { useForm } from "react-hook-form";
-import { TitleAverage, Title, TitleLittle, Description } from "../theme/Title";
+import { Description } from "../theme/Title";
 import { Button } from "../theme/Button";
 
 const FormWrapp = styled.form`
@@ -11,6 +13,7 @@ const FormWrapp = styled.form`
     grid-template: 45px 190px 45px / repeat(2, 280px);
     justify-content: space-between;
     row-gap: 30px;
+    column-gap: 25px;
 `
 
 const WrappInput = styled.div`
@@ -41,7 +44,7 @@ const WrappTextarea = styled.div`
 
 const Textarea = styled.textarea`
     padding: 20px;
-    width: 585px;
+    width: 100%;
     height: 190px;
     border: 1px solid #000000;
     resize: none;
@@ -68,7 +71,7 @@ const PoliticText = styled(Description)`
     align-items: center;
 `
 
-const PoliticLink = styled.a`
+const PoliticLink = styled.span`
     color: #0645ad;
     &:hover {
         text-decoration: underline;
@@ -91,7 +94,6 @@ function Form() {
     const {
         register,
         handleSubmit,
-        // watch,
         formState: { errors }
     } = useForm();
 
@@ -147,7 +149,9 @@ function Form() {
                         })}
                     />
                     {errors?.name?.type === "checked" && <ErrorMessage>Нужно принять политику конфиденциальности</ErrorMessage>}
-                    <span>Я согласен(а) с <PoliticLink href="/privacy" target="blank">политикой конфиденциальности</PoliticLink></span>
+                    {/* <span>Я согласен(а) с <PoliticLink href="/privacy" target="blank">политикой конфиденциальности</PoliticLink></span> */}
+                    <span>Я согласен(а) с <PoliticLink><Link to="/privacy">политикой конфиденциальности</Link></PoliticLink></span>
+
                 </PoliticText>
             </TriggersBox>
         </FormWrapp>
@@ -155,6 +159,3 @@ function Form() {
 }
 
 export default Form;
-
-
-// type="submit"

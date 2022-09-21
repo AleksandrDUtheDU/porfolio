@@ -36,7 +36,7 @@ function App() {
       </NavState>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/privacy" element={<Politics />} />
+        <Route path="/privacy/" element={<Politics />} />
       </Routes>
 
       {/* <Head />

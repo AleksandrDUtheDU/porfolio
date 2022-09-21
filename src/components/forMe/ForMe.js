@@ -8,21 +8,22 @@ import webDev from '../../resources/icons/about_me/web_development.svg';
 import { Container } from "../theme/Container";
 import { TitleAverage, Title, TitleLittle, Description } from "../theme/Title";
 import { Divider } from '../theme/Divider';
-import SkillsImg from '../theme/SkillsImg';
+import SkillsImg, { ImgSrc } from '../theme/SkillsImg';
 
 const ForMeSection = styled(Container)`
   padding-top: 120px;
   display: grid;
-  grid-template-columns: 400px 670px;
+  grid-template-columns: 1fr 1.55fr;
   grid-template-rows: minmax(245px auto) minmax(255px auto);
   grid-auto-rows: minmax(245px auto);
   column-gap: 70px;
   row-gap: 40px;
 `
 
-const Foto = styled.img.attrs({
-  src: main_photo,
-})`
+const Foto = styled(ImgSrc)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   grid-row: 1/3;
 `
 
@@ -39,9 +40,9 @@ const TitleBig = styled(Title)`
 `
 
 const DescriptionAverage = styled(Description)`
-margin-top: 20px;
-font-size: 14px;
-line-height: 21px;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 21px;
 `
 
 const ForMeSkillBox = styled.div`
@@ -103,7 +104,7 @@ function ForMeSkillBoxComponent() {
 function ForMe() {
   return (
     <ForMeSection as="section">
-      <Foto />
+      <Foto img={main_photo} />
       <ForMeTitleComponent />
       <ForMeSkillBoxComponent />
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Title, TitleSection } from "../theme/Title";
 import { Section } from "../theme/Container";
 import { Divider } from '../theme/Divider';
-import { SkillsImgSrc } from '../theme/SkillsImg';
+import { ImgSrc } from '../theme/SkillsImg';
 
 import uber from '../../resources/img/works/uber.jpg';
 import pulse from '../../resources/img/works/pulse.jpg';
@@ -17,26 +17,28 @@ import mac from '../../resources/img/works/mac.jpg';
 const MyWorksWrapp = styled.div`
   margin-top: 60px;
   display: grid;
-  grid-template: repeat(2, 280px) / repeat(4, 280px);
+  grid-template: repeat(2, 1fr) / repeat(4, 1fr);
   gap: 5px;
 `
 
-const MyWorksItem = styled.a`
+const MyWorksItemLink = styled.a`
 
 `
 
-const MyWorksItemHorizontal = styled(MyWorksItem)`
-grid-row: 2 / 3;
-grid-column: 2 / 4;
+const MyWorksItemHorizontal = styled(MyWorksItemLink)`
+  grid-row: 2 / 3;
+  grid-column: 2 / 4;
 `
 
-const MyWorksItemVertikal = styled(MyWorksItem)`
-grid-row: 1 / 3;
-grid-column: 4 / 5;
+const MyWorksItemVertikal = styled(MyWorksItemLink)`
+  grid-row: 1 / 3;
+  grid-column: 4 / 5;
 `
 
-const MyWorksImg = styled(SkillsImgSrc)`
+const MyWorksImg = styled(ImgSrc)`
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   &:hover {
     filter: grayscale(100%);
   }
@@ -50,21 +52,21 @@ function MyWorks() {
       <Title>Мои работы</Title>
       <Divider />
       <MyWorksWrapp>
-        <MyWorksItem href="http://gachiclab.ru/" target="blank">
+        <MyWorksItemLink href="http://gachiclab.ru/" target="blank">
           <MyWorksImg img={uber} />
-        </MyWorksItem>
-        <MyWorksItem href="http://gachiclab.ru/" target="blank">
+        </MyWorksItemLink>
+        <MyWorksItemLink href="http://gachiclab.ru/" target="blank">
           <MyWorksImg img={pulse} />
-        </MyWorksItem>
-        <MyWorksItem href="http://gachiclab.ru/" target="blank">
+        </MyWorksItemLink>
+        <MyWorksItemLink href="http://gachiclab.ru/" target="blank">
           <MyWorksImg img={bread} />
-        </MyWorksItem>
+        </MyWorksItemLink>
         <MyWorksItemVertikal href="http://gachiclab.ru/" target="blank">
           <MyWorksImg img={plans} />
         </MyWorksItemVertikal>
-        <MyWorksItem href="http://gachiclab.ru/" target="blank">
+        <MyWorksItemLink href="http://gachiclab.ru/" target="blank">
           <MyWorksImg img={ipad} />
-        </MyWorksItem>
+        </MyWorksItemLink>
         <MyWorksItemHorizontal href="http://gachiclab.ru/" target="blank">
           <MyWorksImg img={mac} />
         </MyWorksItemHorizontal>
