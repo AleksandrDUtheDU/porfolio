@@ -13,6 +13,10 @@ const Socialpanel = styled.aside`
     height: 25px;
     z-index: 3;
     transform: rotate(-90deg) translate(-110%, -550%);
+    @media ${props => props.theme.media.bigTablet} {
+        display: none;
+    }
+
 `
 
 const SocialpanelText = styled.div`

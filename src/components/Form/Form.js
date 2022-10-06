@@ -12,8 +12,12 @@ const FormWrapp = styled.form`
     display: grid;
     grid-template: 45px 190px 45px / repeat(2, 280px);
     justify-content: space-between;
-    row-gap: 30px;
+    row-gap: 25px;
     column-gap: 25px;
+    @media ${props => props.theme.media.phone} {
+        grid-template: 45px 45px 190px / 300px;
+    }
+
 `
 
 const WrappInput = styled.div`
@@ -40,6 +44,9 @@ const DescrInput = styled(Description)`
 const WrappTextarea = styled.div`
     position:relative;
     grid-column: 1 / 3;
+    @media ${props => props.theme.media.phone} {
+        grid-column: unset;
+    }
 `
 
 const Textarea = styled.textarea`
@@ -55,10 +62,17 @@ const TriggersBox = styled.div`
     display: grid;
     grid-template-columns: repeat(2, auto);
     column-gap: 35px;
+    @media ${props => props.theme.media.phone} {
+        grid-column: unset;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
 `
 
 const FormButton = styled(Button)`
     border: none;
+
+
 
 `
 
@@ -104,7 +118,7 @@ function Form() {
     return (
         <FormWrapp onSubmit={handleSubmit(onSubmit)}>
             <WrappInput>
-                <Input type="text" placeholder="Иван"
+                <Input type="name" placeholder="Иван"
                     {...register("name", {
                         required: true,
                         maxLength: 20,
@@ -135,24 +149,26 @@ function Form() {
                     })}
 
                 />
-                {errors?.name?.type === "required" && <ErrorMessage>Это поле не заполнено</ErrorMessage>}
-                {errors?.name?.type === "maxLength" && <ErrorMessage>Ваше сообщение не может быть более 200 символов</ErrorMessage>}
+                {errors?.text?.type === "required" && <ErrorMessage>Это поле не заполнено</ErrorMessage>}
+                {errors?.text?.type === "maxLength" && <ErrorMessage>Ваше сообщение не может быть более 200 символов</ErrorMessage>}
                 <DescrInput as={'label'} for='text'>Ваше сообщение</DescrInput>
             </WrappTextarea>
             <TriggersBox>
                 <FormButton as={'button'} >Отправить сообщение</FormButton>
                 <PoliticText>
                     <PoliticInput type="checkbox"
-                        {...register("privacy", {
+                        {...register("checkbox", {
+                            required: true,
                             checked: true,
                             maxLength: 200
                         })}
                     />
-                    {errors?.name?.type === "checked" && <ErrorMessage>Нужно принять политику конфиденциальности</ErrorMessage>}
-                    {/* <span>Я согласен(а) с <PoliticLink href="/privacy" target="blank">политикой конфиденциальности</PoliticLink></span> */}
-                    <span>Я согласен(а) с <PoliticLink><Link to="/privacy">политикой конфиденциальности</Link></PoliticLink></span>
-
+                    <div>
+                        <label>Я согласен(а) с <PoliticLink><Link to="/privacy">политикой конфиденциальности</Link></PoliticLink></label>
+                        {errors?.checkbox?.type === "required" && <ErrorMessage>Нужно принять политику конфиденциальности</ErrorMessage>}
+                    </div>
                 </PoliticText>
+
             </TriggersBox>
         </FormWrapp>
     );

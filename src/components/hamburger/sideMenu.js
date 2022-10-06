@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import { Link } from "react-router-dom";
+
+
 import { MenuContext } from './navState';
 import Telegram from '../sociaIcons/Telegram';
 import Vkontakte from '../sociaIcons/Vkontakte';
@@ -13,8 +16,7 @@ const Menu = styled.nav`
     bottom: 0px;
     z-index: 293;
     display: block;
-    width: 400px;
-    max-width: 100%;
+    width: 345px;
     margin-top: 0px;
     padding-top: 100px;
     padding-right: 0px;
@@ -22,7 +24,9 @@ const Menu = styled.nav`
     background-color: ${props => props.color || props.theme.colors.primary};
     transform: translateX(-100%);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-
+    @media ${props => props.theme.media.phone} {
+        max-width: 250px;
+    }
     ${props =>
         props.open &&
         css`
@@ -31,7 +35,6 @@ const Menu = styled.nav`
 `;
 
 export const MenuLink = styled.a`
-    /* font-weight: 700; */
     font-size: 24px;
     line-height: 36px;
     color: #FFFFFF;
@@ -43,12 +46,16 @@ export const MenuLink = styled.a`
     padding-top: 0px;
     padding-bottom: 25px;
     padding-left: 75px;
+    padding-right: 20px;
     background-position: 88% 50%;
     background-size: 36px;
     background-repeat: no-repeat;
     transition: background-position 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     text-decoration: none;
     transition: all 0.5s;
+    @media ${props => props.theme.media.phone} {
+        padding-left: 55px;
+    }
     :before {
         content: '';
         position: absolute;
@@ -60,6 +67,9 @@ export const MenuLink = styled.a`
         border: 1px solid #000000;
         border-radius: 100%;
         transition: all 0.5s;
+        @media ${props => props.theme.media.phone} {
+            left: 25px;
+        }
     }
 
     :hover {
@@ -95,12 +105,12 @@ SideMenu.defaultProps = {
     children: (
         <>
             <ul>
-                <li><MenuLink href="/">Про меня</MenuLink></li>
-                <li><MenuLink href="/">Мой опыт</MenuLink></li>
-                <li><MenuLink href="/">Мои навыки</MenuLink></li>
-                <li><MenuLink href="/">Мои работы</MenuLink></li>
-                <li><MenuLink href="/">Прайс-лист</MenuLink></li>
-                <li><MenuLink href="/">Контакты</MenuLink></li>
+                <li><MenuLink href="#for-me"><Link to="/#for-me">Про меня</Link></MenuLink></li>
+                <li><MenuLink href="#experience">Мой опыт</MenuLink></li>
+                <li><MenuLink href="#skills">Мои навыки</MenuLink></li>
+                <li><MenuLink href="#my-works">Мои работы</MenuLink></li>
+                <li><MenuLink href="#prises">Прайс-лист</MenuLink></li>
+                <li><MenuLink href="#contact">Контакты</MenuLink></li>
             </ul>
             <SocialLink>
                 <Github width="30" height="30" />

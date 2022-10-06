@@ -47,7 +47,7 @@ const MyWorksImg = styled(ImgSrc)`
 
 function MyWorks() {
   return (
-    <Section as="section">
+    <Section as="section" id="my-works">
       <TitleSection as="h2">Портфолио</TitleSection>
       <Title>Мои работы</Title>
       <Divider />

@@ -47,7 +47,7 @@ const MyPrisesComponent = ({ title, prises, descr }) => {
 
 function Prises() {
   return (
-    <Section as="section">
+    <Section as="section" id="prises">
       <TitleSection as="h2">Прайс-лист</TitleSection>
       <Divider />
 

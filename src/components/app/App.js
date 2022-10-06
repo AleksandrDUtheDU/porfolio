@@ -38,16 +38,6 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/privacy/" element={<Politics />} />
       </Routes>
-
-      {/* <Head />
-      <ForMe />
-      <MySoftSkill />
-      <MyHardSkill />
-      <MyWorks />
-      <Prises />
-      <Contact /> */}
-      {/* <Politics /> */}
-
     </Router>
   );
 }

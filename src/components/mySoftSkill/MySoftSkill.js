@@ -105,7 +105,7 @@ const ItemMySoftSkillComponent = ({ img, title, subTitle, descr, link, titleLink
 
 function MySoftSkill() {
   return (
-    <Section as="section">
+    <Section as="section" id="experience">
       <TitleSection as="h2">Опыт</TitleSection>
       <Title>Чем я буду полезен</Title>
       <Divider />

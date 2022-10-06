@@ -97,7 +97,7 @@ const MyHardSkillItemComponent = ({ img, title, descr }) => {
 
 function MyHardSkill() {
   return (
-    <Section as="section">
+    <Section as="section" id="skills">
       <TitleSection as="h2">Навыки</TitleSection>
       <Title>Что я использую в работе</Title>
       <Divider />

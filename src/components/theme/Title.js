@@ -1,18 +1,31 @@
 import styled from "styled-components";
 
 export const Title = styled.div`
+    margin-top: 20px;
     font-weight: 700;
     font-size: 36px;
     line-height: 60px;
     z-index: 5;
+    @media ${props => props.theme.media.bigTablet} {
+    font-size: 28px;
+    line-height: 36px;
+    }
+    @media ${props => props.theme.media.smallPhone} {
+    font-size: 24px;
+    }
+
 `;
 
 export const TitleAverage = styled(Title)`
+    margin-top: 0;
     font-size: 16px;
     line-height: 24px;
     position: relative;
     padding-left: 13px;
     z-index: 2;
+    /* @media ${props => props.theme.media.bigTablet} {
+    margin-top: 50px;
+    } */
     &:before 
     {
         ${props => props.circle || props.theme.circle}
@@ -23,8 +36,9 @@ export const TitleAverage = styled(Title)`
 `
 
 export const TitleLittle = styled(Title)`
-  font-size: 14px;
-  line-height: 21px;
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 21px;
 `
 
 export const TitleSection = styled(TitleAverage)`

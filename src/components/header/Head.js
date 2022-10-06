@@ -1,15 +1,27 @@
 import styled from "styled-components";
 import { Button } from "../theme/Button";
 import { Title } from "../theme/Title";
-import { Container } from "../theme/Container";
+import { Section } from "../theme/Container";
 import bgPhoto from "../../resources/img/main_bg2.jpg"
 import { TitleAverage } from "../theme/Title";
 
 
 const TitleBig = styled(Title)`
-        font-size: 48px;
-        width: 700px;
-        padding-top: 10px;
+  font-size: 48px;
+  line-height: 60px;
+  max-width: 700px;
+  padding-top: 10px;
+  @media ${props => props.theme.media.tablet} {
+    font-size: 34px;
+    line-height: 42px;
+    max-width: 550px;
+  }
+  @media ${props => props.theme.media.smallPhone} {
+    font-size: 26px;
+    line-height: 39px;
+
+  }
+
 `
 
 const LightButton = styled(Button)`
@@ -18,11 +30,17 @@ const LightButton = styled(Button)`
 `
 
 const HeadWrapp = styled.section`
-    min-height: 100vh;
-    position: relative;
-    background: url(${bgPhoto}) no-repeat 50%/cover;
-    padding-top: 205px;
+  min-height: 100vh;
+  position: relative;
+  background: url(${bgPhoto}) no-repeat 50%/cover;
+  padding-top: 205px;
+  @media ${props => props.theme.media.phone} {
+    background: url(${bgPhoto}) no-repeat 58%/cover;
+  }
+`
 
+const HeadSection = styled(Section)`
+  text-align: left;
 `
 
 const BtnWrapp = styled.div`
@@ -36,14 +54,14 @@ const BtnWrapp = styled.div`
 function Head() {
   return (
     <HeadWrapp>
-      <Container>
+      <HeadSection>
         <TitleAverage>Меня зовут Александр Дудник</TitleAverage>
         <TitleBig as="h1">Я frontend разработчик из города Санкт-Петербург</TitleBig>
         <BtnWrapp>
-          <Button href="#">Портфолио</Button>
-          <LightButton href="#">Про меня</LightButton>
+          <Button href="#my-works">Портфолио</Button>
+          <LightButton href="#for-me">Про меня</LightButton>
         </BtnWrapp>
-      </Container>
+      </HeadSection>
     </HeadWrapp>
   );
 }

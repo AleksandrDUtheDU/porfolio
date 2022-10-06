@@ -16,7 +16,7 @@ const ImgCircleWrapp = styled.div`
     };
 `
 
-export const ImgSrc = styled.img.attrs(prop => ({ src: prop.img, alt: `${prop.img.slice(14).split('.')[0]}` }))`
+export const ImgSrc = styled.img.attrs(prop => ({ src: prop.img, alt: prop.img.slice(14).split('.')[0] }))`
 `
 
 const SkillsImg = ({ img }) => {
@@ -28,3 +28,6 @@ const SkillsImg = ({ img }) => {
 }
 
 export default SkillsImg;
+
+
+// srcset: `${prop.imgMobile} 300w, ${prop.img} 400w,`, sizes: `(max-widht: 576px) 299px,(min-widht: 577px) 400px`
