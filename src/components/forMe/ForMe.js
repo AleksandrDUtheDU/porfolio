@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-import main_photo from '../../resources/img/main_photo.jpg';
+import main_photo from '../../resources/img/main_photo2.jpg';
 import main_photo_min from '../../resources/img/main_photo_min.jpg';
 
-import design from '../../resources/icons/about_me/design.svg'
 import mobileWeb from '../../resources/icons/about_me/mobile_dev.svg';
 import webDev from '../../resources/icons/about_me/web_development.svg';
 
@@ -58,7 +57,7 @@ const DescriptionAverage = styled(Description)`
 
 const ForMeSkillBox = styled.div`
   display: grid;
-  grid-template-rows: repeat(2, minmax(115px, auto));
+  grid-template-rows: repeat(1, minmax(115px, auto));
   grid-template-columns: repeat(2, 260px);
   grid-auto-rows: minmax(115px, auto);
   column-gap: 50px;
@@ -124,7 +123,7 @@ function ForMeSkillBoxComponent() {
 function ForMe() {
   return (
     <ForMeSection as="section" id='for-me'>
-      <Foto img={main_photo} imgMobile={main_photo_min} />
+      <Foto img={main_photo} imgMobile={main_photo} />
       <ForMeTitleComponent />
       <ForMeSkillBoxComponent />
 

@@ -8,8 +8,8 @@ const MyPrisesWrapp = styled.div`
 margin-top: 70px;
 display: grid;
 grid-template-columns: repeat(2, 340px);
-grid-template-rows: repeat(3, 50px);
-grid-auto-rows: 50px;
+grid-template-rows: repeat(1, minmax(50px, auto));
+grid-auto-rows: minmax(50px, auto);
 justify-content:space-around;
 gap: 15px;
 text-align:left;
@@ -54,33 +54,23 @@ function Prises() {
       <MyPrisesWrapp>
         <MyPrisesComponent
           title={'Landing-page'}
-          prises={'от 8000 руб.'}
+          prises={'от 25000 руб.'}
           descr={'Одностраничный сайт для презентации услуг/товаров/...'}
         />
         <MyPrisesComponent
           title={'Корпоративный сайт'}
-          prises={'от 20000 руб.'}
+          prises={'от 80000 руб.'}
           descr={'Сайт для вашего бизнеса или компании'}
         />
         <MyPrisesComponent
           title={'Интернет-магазин'}
-          prises={'от 30000 руб.'}
+          prises={'от 100000 руб.'}
           descr={'Инструмент для ваших продаж в сети'}
         />
         <MyPrisesComponent
           title={'Web-приложение'}
-          prises={'от 28000 руб.'}
+          prises={'от 120000 руб.'}
           descr={'Приложение внутри браузера для лучшего комфорта'}
-        />
-        <MyPrisesComponent
-          title={'Android/IOS Приложение'}
-          prises={'от 25000 руб.'}
-          descr={'Приложение для смартфона любой ОС'}
-        />
-        <MyPrisesComponent
-          title={'Дизайн'}
-          prises={'Индивидуально'}
-          descr={'Создам дизайн для вашего сайта/приложения...'}
         />
       </MyPrisesWrapp>
 

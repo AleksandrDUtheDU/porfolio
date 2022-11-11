@@ -19,9 +19,7 @@ const TitleBig = styled(Title)`
   @media ${props => props.theme.media.smallPhone} {
     font-size: 26px;
     line-height: 39px;
-
   }
-
 `
 
 const LightButton = styled(Button)`
@@ -34,9 +32,12 @@ const HeadWrapp = styled.section`
   position: relative;
   background: url(${bgPhoto}) no-repeat 50%/cover;
   padding-top: 205px;
-  @media ${props => props.theme.media.phone} {
+  @media ${props => props.theme.media.notebook} {
     background: url(${bgPhoto}) no-repeat 58%/cover;
   }
+  /* @media ${props => props.theme.media.phone} {
+    background: url(${bgPhoto}) no-repeat 58%/cover;
+  } */
 `
 
 const HeadSection = styled(Section)`
@@ -44,11 +45,11 @@ const HeadSection = styled(Section)`
 `
 
 const BtnWrapp = styled.div`
-        margin-top: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 250px;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
 `
 
 function Head() {

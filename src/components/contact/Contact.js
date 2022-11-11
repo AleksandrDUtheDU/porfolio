@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import main_photo from '../../resources/img/main_photo.jpg';
+import main_photo from '../../resources/img/main_photo2.jpg';
 import Telegram from '../sociaIcons/Telegram';
 import Vkontakte from '../sociaIcons/Vkontakte';
 import Github from '../sociaIcons/Github';

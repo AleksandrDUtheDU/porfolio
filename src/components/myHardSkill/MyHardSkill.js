@@ -8,7 +8,6 @@ import { ImgSrc } from '../theme/SkillsImg';
 import html5 from '../../resources/icons/skills/html5.svg';
 import css3 from '../../resources/icons/skills/css3.svg';
 import javaScript from '../../resources/icons/skills/js.svg';
-import jquery from '../../resources/icons/skills/jquery.svg';
 import react from '../../resources/icons/skills/react.svg';
 import nodeJs from '../../resources/icons/skills/node.js.svg';
 import mongoBb from '../../resources/icons/skills/mongo.db.svg';
@@ -19,7 +18,7 @@ const MyHardSkillWrapp = styled.div`
   margin-top: 60px;
   display: grid;
   justify-content: space-around;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, 270px);
   grid-template-rows: repeat(2, 1fr);
   grid-auto-rows: 1fr;
   gap: 10px;
@@ -116,11 +115,6 @@ function MyHardSkill() {
           img={javaScript}
           title={'Java Script'}
           descr={'Этот язык программирования позволяет оживить все что угодно: слайдеры, окна, подсказки, вкладки, получение данных от сервера и многое другое'}
-        />
-        <MyHardSkillItemComponent
-          img={jquery}
-          title={'Jquery'}
-          descr={'Библиотека Jquery позволит ускорить разработку. Без необходимости интегрировать в проект мы её не будем, но навык работы с ней присутствует'}
         />
         <MyHardSkillItemComponent
           img={react}

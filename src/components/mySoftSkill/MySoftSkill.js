@@ -8,15 +8,14 @@ import SkillsImg from '../theme/SkillsImg';
 import university from '../../resources/icons/experience/university.svg';
 import courses from '../../resources/icons/experience/courses.svg';
 import developer from '../../resources/icons/experience/developer.svg';
-import designer from '../../resources/icons/experience/designer.svg';
 
 
 const MySoftSkillWrapp = styled.div`
   margin-top: 70px;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(2, 425px);
-  grid-template-rows: 380px;
+  grid-template-columns: repeat(2, minmax(425px, auto));
+  grid-template-rows: minmax(380px, auto);
   grid-auto-rows: 380px;
   gap: 130px;
 `
@@ -24,8 +23,6 @@ const MySoftSkillWrapp = styled.div`
 const MySoftSkillWrappCollum = styled.div`
   text-align: left;
   padding-left: 45px ;
-
-
 `
 
 const TitleMySoftSkillWrapp = styled(TitleAverage)`
@@ -122,11 +119,20 @@ function MySoftSkill() {
             <ItemMySoftSkillComponent
               img={courses}
               title={'UNDEMY'}
+              subTitle={'WEB-разработчик | 2022'}
+              descr={'Курс позволил мне освоить верстку (адаптивная, резиновая, flex, grid'}
+              link={'https://www.udemy.com/certificate/UC-6a0d698b-849a-4736-b686-6cce0f0d854e/'}
+              titleLink={'Сертификат'}
+            />
+            <ItemMySoftSkillComponent
+              img={courses}
+              title={'UNDEMY'}
               subTitle={'Полный курс по JavaScript + React | 2022'}
               descr={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex incidunt sequi at eum ratione tenetur iure vel odit sapiente, beatae quis provident quasi omnis inventore? Minima aliquam rem eum labore.'}
               link={'https://www.udemy.com/certificate/UC-bc2945a2-edb7-4ce1-80fd-73f8ac400f7e/'}
               titleLink={'Сертификат'}
             />
+
           </ul>
         </MySoftSkillWrappCollum>
         <MySoftSkillWrappCollum>
@@ -134,15 +140,9 @@ function MySoftSkill() {
           <ul>
             <ItemMySoftSkillComponent
               img={developer}
-              title={'Front-End Developer'}
-              subTitle={'EPAM | СПб (2020-2021)'}
-              descr={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex incidunt sequi at eum ratione tenetur iure vel odit sapiente, beatae quis provident quasi omnis inventore? Minima aliquam rem eum labore.'}
-            />
-            <ItemMySoftSkillComponent
-              img={designer}
-              title={'UI/UX Designer'}
-              subTitle={'Squad Team | СПб (2021)'}
-              descr={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex incidunt sequi at eum ratione tenetur iure vel odit sapiente, beatae quis provident quasi omnis inventore? Minima aliquam rem eum labore.'}
+              title={'Frontend Developer'}
+              subTitle={'Andersen  | СПб (2022)'}
+              descr={'Основные задачи: верстка лэндингов и написание простейшей логики UI (формы отправки, слайды, адаптив), получение/отправление и обработка данных с различных API, поиск ошибок и внесение правок в старом/новом коде'}
             />
           </ul>
         </MySoftSkillWrappCollum>
