@@ -18,7 +18,7 @@ const MyHardSkillWrapp = styled.div`
   margin-top: 60px;
   display: grid;
   justify-content: space-around;
-  grid-template-columns: repeat(auto-fill, 270px);
+  grid-template-columns: repeat(auto-fit, 270px);
   grid-template-rows: repeat(2, 1fr);
   grid-auto-rows: 1fr;
   gap: 10px;
@@ -33,16 +33,28 @@ const MyHardSkillItem = styled.div`
   height: 100%;
   width: 100%;
   text-align: left;
-  border: 1px solid #000000;
+  border: 1px solid black;
 `
 
 const MyHardSkillPercentWrapp = styled.div`
   margin-top: 120px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 70px);
-  grid-auto-rows: 70px;
+  grid-template-columns: repeat(auto-fit, 270px);
+  grid-template-rows: minmax(70px, auto);
+  grid-auto-rows: minmax(70px, auto);
+  justify-content: space-around;
   gap: 30px 45px;
+  /* @media ${props => props.theme.media.notebook} {
+    gap: 20px;
+  }
+  @media ${props => props.theme.media.bigTablet} {
+    gap: 30px;
+  }
+
+  @media ${props => props.theme.media.tablet} {
+    grid-template-columns: repeat(1, minmax(425px, auto));
+  } */
+
 `
 const MyHardSkillPercentTitleBox = styled.div`
   display: flex;

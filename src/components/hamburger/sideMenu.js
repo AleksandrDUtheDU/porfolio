@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { Link } from "react-router-dom";
 
 
 import { MenuContext } from './navState';
@@ -105,7 +104,7 @@ SideMenu.defaultProps = {
     children: (
         <>
             <ul>
-                <li><MenuLink href="#for-me"><Link to="/#for-me">Про меня</Link></MenuLink></li>
+                <li><MenuLink href="#for-me">Про меня</MenuLink></li>
                 <li><MenuLink href="#experience">Мой опыт</MenuLink></li>
                 <li><MenuLink href="#skills">Мои навыки</MenuLink></li>
                 <li><MenuLink href="#my-works">Мои работы</MenuLink></li>

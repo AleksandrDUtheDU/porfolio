@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 
 import main_photo from '../../resources/img/main_photo2.jpg';
 import Telegram from '../sociaIcons/Telegram';
 import Vkontakte from '../sociaIcons/Vkontakte';
 import Github from '../sociaIcons/Github';
 
-
+import { theme } from '../theme/Theme'
 import { Section } from "../theme/Container";
 import { TitleAverage, Title, Description } from "../theme/Title";
 import { Divider } from '../theme/Divider';
@@ -25,32 +26,24 @@ const ContactSection = styled(Section)`
     column-gap: 30px;
   }
   @media ${props => props.theme.media.bigTablet} {
-    grid-template-columns: 560px;
+    grid-template-columns: 1fr;
   }
   @media ${props => props.theme.media.phone} {
     grid-template-columns: 300px;
     grid-template-rows: minmax(600px, auto);
 
   }
-
-  /* @media ${props => props.theme.media.phone} {
-    margin-top: 40px;
-    row-gap: 40px;
-    grid-template-columns: 1fr;
-  } */
 `
 
 const Foto = styled(ImgSrc)`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  @media ${props => props.theme.media.bigTablet} {
-    display: none;
-  }
-
 `
 
 const ContactTitle = styled.div`
+  width: 100%;
+
   padding-top: 7px;
 `
 
@@ -103,9 +96,15 @@ function ContactTitleComponent() {
 
 
 function Contact() {
+
+  const isBigTablet = useMediaQuery({
+    query: theme.media.bigTablet
+  })
+
+
   return (
     <ContactSection as="section" id='contact'>
-      <Foto img={main_photo} />
+      {isBigTablet ? '' : <Foto img={main_photo} />}
       <ContactTitleComponent />
     </ContactSection>
   );

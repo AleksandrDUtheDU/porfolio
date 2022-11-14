@@ -17,8 +17,14 @@ import mac from '../../resources/img/works/mac.jpg';
 const MyWorksWrapp = styled.div`
   margin-top: 60px;
   display: grid;
-  grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  grid-template-columns: repeat(4, 280px);
+  grid-template-rows: repeat(2, 280px);
+  grid-auto-rows: 280px;
+  justify-content: space-around;
   gap: 5px;
+  @media ${props => props.theme.media.notebook} {
+    grid-template-columns: repeat(auto-fit, 280px);
+  }
 `
 
 const MyWorksItemLink = styled.a`
@@ -28,11 +34,19 @@ const MyWorksItemLink = styled.a`
 const MyWorksItemHorizontal = styled(MyWorksItemLink)`
   grid-row: 2 / 3;
   grid-column: 2 / 4;
+  @media ${props => props.theme.media.notebook} {
+    grid-row: unset;
+    grid-column: unset;
+  }
 `
 
 const MyWorksItemVertikal = styled(MyWorksItemLink)`
   grid-row: 1 / 3;
   grid-column: 4 / 5;
+  @media ${props => props.theme.media.notebook} {
+    grid-row: unset;
+    grid-column: unset;
+  }
 `
 
 const MyWorksImg = styled(ImgSrc)`

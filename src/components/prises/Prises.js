@@ -5,14 +5,23 @@ import { Section } from "../theme/Container";
 import { Divider } from '../theme/Divider';
 
 const MyPrisesWrapp = styled.div`
+/* width: 80%; */
+padding: 10px;
 margin-top: 70px;
 display: grid;
-grid-template-columns: repeat(2, 340px);
-grid-template-rows: repeat(1, minmax(50px, auto));
+grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+grid-template-rows: minmax(50px, auto);
 grid-auto-rows: minmax(50px, auto);
 justify-content:space-around;
 gap: 15px;
 text-align:left;
+  @media ${props => props.theme.media.bigTablet} {
+    margin-top: 30px;
+  }
+  @media ${props => props.theme.media.phone} {
+    padding: 30px;
+  }
+
 `
 const MyPrisesTitle = styled(TitleAverage)`
 padding:0;
@@ -26,6 +35,11 @@ padding:0;
 
 `
 
+const Box = styled.div`
+/* width: 80%; */
+`
+
+
 const MyPrisesTitleBox = styled.div`
 display: flex;
 justify-content:space-between;
@@ -34,13 +48,13 @@ text-align:left;
 
 const MyPrisesComponent = ({ title, prises, descr }) => {
   return (
-    <div>
+    <Box>
       <MyPrisesTitleBox>
         <MyPrisesTitle>{title}</MyPrisesTitle>
         <TitleLittle>{prises}</TitleLittle>
       </MyPrisesTitleBox >
       <Description>{descr}</Description>
-    </div>
+    </Box>
   )
 }
 

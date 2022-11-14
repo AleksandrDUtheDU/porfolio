@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
+import { theme } from '../theme/Theme'
 import Head from '../header/Head';
 import SocialPanel from '../socialPanel/SocialPanel';
 import NavState from '../hamburger/navState';
@@ -28,9 +30,13 @@ function MainPage() {
 }
 
 function App() {
+  const isNotebook = useMediaQuery({
+    query: theme.media.notebook
+  })
+
   return (
     <Router>
-      <SocialPanel />
+      {isNotebook ? '' : <SocialPanel />}
       <NavState>
         <MainMenu />
       </NavState>

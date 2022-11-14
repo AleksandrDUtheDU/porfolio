@@ -11,18 +11,35 @@ import developer from '../../resources/icons/experience/developer.svg';
 
 
 const MySoftSkillWrapp = styled.div`
+
   margin-top: 70px;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, minmax(425px, auto));
   grid-template-rows: minmax(380px, auto);
-  grid-auto-rows: 380px;
+  grid-auto-rows: minmax(380px, auto);
   gap: 130px;
+  @media ${props => props.theme.media.notebook} {
+    gap: 60px;
+  }
+  @media ${props => props.theme.media.bigTablet} {
+    gap: 30px;
+  }
+  @media ${props => props.theme.media.tablet} {
+    grid-template-columns: repeat(1, minmax(425px, auto));
+  }
+  @media ${props => props.theme.media.phone} {
+    grid-template-columns: repeat(1, minmax(290px, auto));
+  }
+
 `
 
 const MySoftSkillWrappCollum = styled.div`
+  /* padding:10px; */
   text-align: left;
   padding-left: 45px ;
+  min-height: 380px;
+
 `
 
 const TitleMySoftSkillWrapp = styled(TitleAverage)`
@@ -144,6 +161,13 @@ function MySoftSkill() {
               subTitle={'Andersen  | СПб (2022)'}
               descr={'Основные задачи: верстка лэндингов и написание простейшей логики UI (формы отправки, слайды, адаптив), получение/отправление и обработка данных с различных API, поиск ошибок и внесение правок в старом/новом коде'}
             />
+            <ItemMySoftSkillComponent
+              img={developer}
+              title={'Фриланс'}
+              subTitle={'Биржа Фриланс | СПб (2022)'}
+              descr={'Написание лендингов (Full Stack), и SPA приложений'}
+            />
+
           </ul>
         </MySoftSkillWrappCollum>
       </MySoftSkillWrapp>

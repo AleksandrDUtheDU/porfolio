@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
+
 
 import main_photo from '../../resources/img/main_photo2.jpg';
-import main_photo_min from '../../resources/img/main_photo_min.jpg';
-
 import mobileWeb from '../../resources/icons/about_me/mobile_dev.svg';
 import webDev from '../../resources/icons/about_me/web_development.svg';
 
+import { theme } from '../theme/Theme';
 import { Section } from "../theme/Container";
 import { TitleAverage, Title, TitleLittle, Description } from "../theme/Title";
 import { Divider } from '../theme/Divider';
@@ -121,13 +122,16 @@ function ForMeSkillBoxComponent() {
 }
 
 function ForMe() {
+  const isBigTablet = useMediaQuery({
+    query: theme.media.bigTablet
+  })
+
+
   return (
     <ForMeSection as="section" id='for-me'>
-      <Foto img={main_photo} imgMobile={main_photo} />
+      {isBigTablet ? '' : <Foto img={main_photo} />}
       <ForMeTitleComponent />
       <ForMeSkillBoxComponent />
-
-
     </ForMeSection>
   );
 }

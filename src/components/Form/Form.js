@@ -1,7 +1,8 @@
-import React from "react"
-import styled from 'styled-components'
-import { useForm } from "react-hook-form"
-import Swal from 'sweetalert2'
+import React from "react";
+import styled from 'styled-components';
+import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
+import { Link } from "react-router-dom";
 
 const FormWrapp = styled.form`
     /* padding: 30px; */
@@ -107,7 +108,7 @@ const PoliticTextBox = styled.div`
     align-items: center;
 `
 
-const PoliticLink = styled.a`
+const PoliticLink = styled(Link)`
     color: #0645ad;
     &:hover {
         text-decoration: underline;
@@ -115,11 +116,18 @@ const PoliticLink = styled.a`
     }
 `
 
+
+const PoliticWrapp = styled.div`
+    @media ${props => props.theme.media.phone} {
+        margin-top: 20px;
+    }
+`
+
+
 const PoliticLabel = styled.label`
     font-size: 14px;
     line-height: 20px;
     font-weight: 500;
-
 `
 
 const ErrorMessage = styled.span`
@@ -234,11 +242,11 @@ function Form() {
                             maxLength: 200
                         })}
                     />
-                    <div>
-                        <PoliticLabel htmlFor='checkbox' >Я согласен(а) с <PoliticLink href="/privacy">политикой конфиденциальности</PoliticLink></PoliticLabel>
+                    <PoliticWrapp>
+                        <PoliticLabel htmlFor='checkbox' >Я согласен(а) с <PoliticLink to="/privacy">политикой конфиденциальности</PoliticLink></PoliticLabel>
                         <br />
                         {errors?.checkbox?.type === "required" && <ErrorMessage>Нужно принять политику конфиденциальности</ErrorMessage>}
-                    </div>
+                    </PoliticWrapp>
                 </PoliticTextBox>
             </TriggersBox>
         </FormWrapp>
