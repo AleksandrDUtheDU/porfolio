@@ -1,6 +1,8 @@
 <?php 
 
+
 $name = $_POST['name'];
+// $phone = $_POST['phone'];
 $email = $_POST['email'];
 $text = $_POST['text'];
 $checkbox = $_POST['checkbox'];
@@ -9,18 +11,18 @@ require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
-// $mail->SMTPDebug = 3;                            // Enable verbose debug output
+// $mail->SMTPDebug = 3;                               // Enable verbose debug output
 
-$mail->isSMTP();                                    // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  					// https://support.google.com/mail/answer/7126229?hl=ru ИНСТРУКЦИЯ
-$mail->SMTPAuth = true;                             // Enable SMTP authentication
-$mail->Username = 'username@gmail.com';       		// !!! Логин
-$mail->Password = '************';               	// !!! Пароль для приложения https://support.google.com/accounts/answer/185833?hl=ru ИНСТРУКЦИЯ
-$mail->SMTPSecure = 'ssl';                          // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                  // TCP port to connect to
+$mail->isSMTP();                                      		// Set mailer to use SMTP
+$mail->Host = 'smtp.gmail.com';  							// Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                               		// Enable SMTP authentication
+$mail->Username = 'orangebtn.shop@gmail.com';               // Наш логин
+$mail->Password = 'ksuuezfyhwtqazca';                       // Наш пароль от ящика
+$mail->SMTPSecure = 'ssl';                            		// Enable TLS encryption, `ssl` also accepted
+$mail->Port = 465;                                    		// TCP port to connect to
  
-$mail->setFrom('username@gmail.com', 'form-php');   		// !!! От кого письмо 
-$mail->addAddress('username_2@gmail.com');     				// !!! Кому письмо
+$mail->setFrom('orangebtn.shop@gmail.com', 'Заявка с сайта');   		// От кого письмо 
+$mail->addAddress('email@a-dudnik.ru');     				// Add a recipient
 //$mail->addAddress('ellen@example.com');               	// Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');

@@ -243,7 +243,7 @@ function Form() {
                         })}
                     />
                     <PoliticWrapp>
-                        <PoliticLabel htmlFor='checkbox' >Я согласен(а) с <PoliticLink to="/privacy">политикой конфиденциальности</PoliticLink></PoliticLabel>
+                        <PoliticLabel htmlFor='checkbox' >Я согласен(а) с <PoliticLink to="/privacy" target='_blank' >политикой конфиденциальности</PoliticLink></PoliticLabel>
                         <br />
                         {errors?.checkbox?.type === "required" && <ErrorMessage>Нужно принять политику конфиденциальности</ErrorMessage>}
                     </PoliticWrapp>

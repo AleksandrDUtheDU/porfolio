@@ -9,11 +9,11 @@ const MyPrisesWrapp = styled.div`
 padding: 10px;
 margin-top: 70px;
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+grid-template-columns: repeat(auto-fit, 250px);
 grid-template-rows: minmax(50px, auto);
 grid-auto-rows: minmax(50px, auto);
 justify-content:space-around;
-gap: 15px;
+gap: 30px;
 text-align:left;
   @media ${props => props.theme.media.bigTablet} {
     margin-top: 30px;

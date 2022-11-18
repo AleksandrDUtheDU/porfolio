@@ -15,8 +15,16 @@ import Contact from '../contact/Contact';
 import Politics from '../Politics/Politics';
 
 function MainPage() {
+  const isNotebook = useMediaQuery({
+    query: theme.media.notebook
+  })
+
   return (
     <>
+      {isNotebook ? '' : <SocialPanel />}
+      <NavState>
+        <MainMenu />
+      </NavState>
       <Head />
       <ForMe />
       <MySoftSkill />
@@ -30,16 +38,8 @@ function MainPage() {
 }
 
 function App() {
-  const isNotebook = useMediaQuery({
-    query: theme.media.notebook
-  })
-
   return (
     <Router>
-      {isNotebook ? '' : <SocialPanel />}
-      <NavState>
-        <MainMenu />
-      </NavState>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/privacy/" element={<Politics />} />

@@ -163,7 +163,7 @@ function MyHardSkill() {
         />
         <MyHardSkillPercentComponent
           title={'Создание дизайна'}
-          percent={'90%'}
+          percent={'50%'}
         />
         <MyHardSkillPercentComponent
           title={'Soft skills'}
