@@ -205,7 +205,7 @@ export const nav = [
     {
         id: '1',
         name: 'Главная',
-        link: '/',
+        link: '',
         title: 'Меня зовут Александр Дудник',
         descr: 'Я frontend разработчик из города Санкт-Петербург',
         img: bgPhoto

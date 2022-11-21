@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-
+import { nav } from '../data/data'
 import { MenuContext } from './navState';
 import Telegram from '../sociaIcons/Telegram';
 import Vkontakte from '../sociaIcons/Vkontakte';
@@ -100,16 +100,28 @@ SideMenu.propTypes = {
     children: PropTypes.node,
 };
 
+const items = nav.map(item => {
+    const { id, name, link } = item;
+
+    return (
+        <li key={id}>
+            <MenuLink href={`#${link}`}> {name} </MenuLink>
+        </li>
+    )
+});
+
+
 SideMenu.defaultProps = {
     children: (
         <>
             <ul>
-                <li><MenuLink href="#for-me">Про меня</MenuLink></li>
+                {items}
+                {/* <li><MenuLink href="#for-me">Про меня</MenuLink></li>
                 <li><MenuLink href="#experience">Мой опыт</MenuLink></li>
                 <li><MenuLink href="#skills">Мои навыки</MenuLink></li>
                 <li><MenuLink href="#my-works">Мои работы</MenuLink></li>
                 <li><MenuLink href="#prises">Прайс-лист</MenuLink></li>
-                <li><MenuLink href="#contact">Контакты</MenuLink></li>
+                <li><MenuLink href="#contact">Контакты</MenuLink></li> */}
             </ul>
             <SocialLink>
                 <Github width="30" height="30" />
