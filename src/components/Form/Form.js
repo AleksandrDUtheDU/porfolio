@@ -5,13 +5,11 @@ import Swal from 'sweetalert2';
 import { Link } from "react-router-dom";
 
 const FormWrapp = styled.form`
-    /* padding: 30px; */
-    /* width: 660px; */
     margin-top: 20px;
     display: grid;
     grid-template: 45px 190px 45px / repeat(2, 1fr);
     justify-content: space-between;
-    row-gap: 40px ;
+    row-gap: 30px ;
     column-gap: 25px;
     position: relative;
     @media ${props => props.theme.media.notebook} {
@@ -31,7 +29,6 @@ const Input = styled.input`
     width: 100%;
     height: 100%;
     border: 1px solid black;
-    /* border-radius: 5px; */
 `
 
 const Label = styled.label`
@@ -45,7 +42,6 @@ const Label = styled.label`
     display: block;
     padding: 2px 8px;
     background: white;
-    /* border-radius: 5px; */
     margin: 0;
 `
 
@@ -62,7 +58,6 @@ const Textarea = styled.textarea`
     width: 100%;
     height: 190px;
     border: 1px solid black;
-    /* border-radius: 5px; */
     resize: none;
 `
 
@@ -116,13 +111,11 @@ const PoliticLink = styled(Link)`
     }
 `
 
-
 const PoliticWrapp = styled.div`
     @media ${props => props.theme.media.phone} {
         margin-top: 20px;
     }
 `
-
 
 const PoliticLabel = styled.label`
     font-size: 14px;
@@ -136,7 +129,6 @@ const ErrorMessage = styled.span`
     font-size: 12px;
     line-height: 18px;
 `
-
 
 function Form() {
 
@@ -192,7 +184,6 @@ function Form() {
                 console.log(error)
             })
     }
-
 
     return (
         <FormWrapp noValidate onSubmit={handleSubmit(onSubmit)}>

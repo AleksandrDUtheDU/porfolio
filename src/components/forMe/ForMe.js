@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 
-
-import main_photo from '../../resources/img/main_photo2.jpg';
-import mobileWeb from '../../resources/icons/about_me/mobile_dev.svg';
-import webDev from '../../resources/icons/about_me/web_development.svg';
-
+import { nav } from "../data/data";
 import { theme } from '../theme/Theme';
 import { Section } from "../theme/Container";
 import { TitleAverage, Title, TitleLittle, Description } from "../theme/Title";
 import { Divider } from '../theme/Divider';
 import SkillsImg, { ImgSrc } from '../theme/SkillsImg';
+
+const name = 'Про меня'
+const { link, title, descr, img, content } = nav.find((e) => e.name === name)
 
 const ForMeSection = styled(Section)`
   display: grid;
@@ -80,28 +79,28 @@ const SkillsItem = styled.div`
   column-gap: 20px;
   width: 100%; 
 `
+const items = content.map(item => {
 
-const SkillsItemComponent = ({ img, imgMobile, title, description }) => {
+  const { id, name, descr, img } = item;
+
   return (
-    <SkillsItem>
-      <SkillsImg img={img} imgMobile={imgMobile} />
+    <SkillsItem key={id}>
+      <SkillsImg img={img} />
       <div>
-        <TitleLittle>{title}</TitleLittle>
-        <Description>{description}</Description>
+        <TitleLittle>{name}</TitleLittle>
+        <Description>{descr}</Description>
       </div>
     </SkillsItem>
   )
-}
+});
 
 function ForMeTitleComponent() {
   return (
     <ForMeTitle>
-      <TitleAverage as="h2">Про меня</TitleAverage>
-      <Title>Меня зовут Александр</Title>
+      <TitleAverage as="h2">{name}</TitleAverage>
+      <Title>{title}</Title>
       <DividerForMe />
-      <DescriptionAverage>
-        С 2020 года развиваю себя как Frontend-разработчика. В этой работе я нахожу вдохновение т.к. она позволяет бесконечно развиваться, совершенствовать свои навыки. Потолка нет, в любой момент ты можешь открывать для себя все новые и новые уровни понимания - это круто! Разработка дает мне возможность самостоятельно реализовывать свои идеи и это мотивирует меня. Приходилось так же выступать и в роли заказчика программных продуктов (быть представителем от бизнеса), поэтому у меня есть опыт, как это выглядит с "другой стороны". Люблю упрощать сложное, систематизировать информацию и отлаживать бизнес процессы. Хорошо умею ладить с людьми, всегда стараюсь найти общий язык.
-      </DescriptionAverage>
+      <DescriptionAverage>{descr}</DescriptionAverage>
     </ForMeTitle>
   )
 }
@@ -109,14 +108,8 @@ function ForMeTitleComponent() {
 function ForMeSkillBoxComponent() {
   return (
     <ForMeSkillBox>
-      <SkillsItemComponent img={webDev} title={'Web-разработка'}
-        description={'Верстка сайтов (визиток, лендингов, интернет магазинов) с адаптивностью и кроссбраузерностью.'} />
-      <SkillsItemComponent img={mobileWeb} title={'Разработка приложений'}
-        description={'Создание SPA приложений с использование современных технологий'} />
-      {/* <SkillsItemComponent img={design} title={'Верстка'}
-        description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'} /> */}
+      {items}
     </ForMeSkillBox>
-
   )
 }
 
@@ -127,8 +120,8 @@ function ForMe() {
 
 
   return (
-    <ForMeSection as="section" id='for-me'>
-      {isBigTablet ? '' : <Foto img={main_photo} />}
+    <ForMeSection as="section" id={link}>
+      {isBigTablet ? '' : <Foto img={img} />}
       <ForMeTitleComponent />
       <ForMeSkillBoxComponent />
     </ForMeSection>

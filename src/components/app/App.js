@@ -2,17 +2,19 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
 import { theme } from '../theme/Theme'
-import Head from '../header/Head';
 import SocialPanel from '../socialPanel/SocialPanel';
 import NavState from '../hamburger/navState';
 import MainMenu from '../hamburger/mainMenu';
+
+import Head from '../header/Head';
 import ForMe from '../forMe/ForMe';
-import MySoftSkill from '../mySoftSkill/MySoftSkill';
-import MyHardSkill from '../myHardSkill/MyHardSkill';
-import MyWorks from '../myWorks/MyWorks';
-import Prises from '../prises/Prises';
+import Experience from '../experience/Experience';
+import Skills from '../skills/Skills';
+import Portfolio from '../portfolio/Portfolio';
+import Prices from '../prices/Prices';
 import Contact from '../contact/Contact';
-import Politics from '../Politics/Politics';
+
+import Politics from '../politics/Politics';
 
 function MainPage() {
   const isNotebook = useMediaQuery({
@@ -27,10 +29,10 @@ function MainPage() {
       </NavState>
       <Head />
       <ForMe />
-      <MySoftSkill />
-      <MyHardSkill />
-      <MyWorks />
-      <Prises />
+      <Experience />
+      <Skills />
+      <Portfolio />
+      <Prices />
       <Contact />
 
     </>

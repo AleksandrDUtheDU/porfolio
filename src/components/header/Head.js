@@ -1,17 +1,21 @@
 import styled from "styled-components";
+
+import { nav } from "../data/data";
 import { Button } from "../theme/Button";
 import { Title } from "../theme/Title";
 import { Section } from "../theme/Container";
-import bgPhoto from "../../resources/img/main_bg2.jpg"
 import { TitleAverage } from "../theme/Title";
+
+const name = 'Главная'
+const { title, descr, img } = nav.find((e) => e.name === name)
 
 const HeadWrapp = styled.section`
   min-height: 100vh;
   position: relative;
-  background: url(${bgPhoto}) no-repeat 50%/cover;
+  background: url(${img}) no-repeat 50%/cover;
   padding-top: 205px;
   @media ${props => props.theme.media.notebook} {
-    background: url(${bgPhoto}) no-repeat 58%/cover;
+    background: url(${img}) no-repeat 58%/cover;
   }
   @media ${props => props.theme.media.bigTablet} {
     padding-right: 300px;
@@ -19,7 +23,7 @@ const HeadWrapp = styled.section`
   @media ${props => props.theme.media.phone} {
     padding-top: 40px;
     padding-right: 0;
-    background: url(${bgPhoto}) no-repeat 70%/cover;
+    background: url(${img}) no-repeat 70%/cover;
   }
 `
 
@@ -59,13 +63,14 @@ const LightButton = styled(Button)`
 
 
 function Head() {
+
   return (
     <HeadWrapp>
       <HeadSection>
-        <TitleAverage>Меня зовут Александр Дудник</TitleAverage>
-        <TitleBig as="h1">Я frontend разработчик из города Санкт-Петербург</TitleBig>
+        <TitleAverage>{title}</TitleAverage>
+        <TitleBig as="h1">{descr}</TitleBig>
         <BtnWrapp>
-          <Button href="#my-works">Портфолио</Button>
+          <Button href="#works">Портфолио</Button>
           <LightButton href="#for-me">Про меня</LightButton>
         </BtnWrapp>
       </HeadSection>

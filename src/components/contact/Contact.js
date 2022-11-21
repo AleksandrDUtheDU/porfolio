@@ -10,7 +10,7 @@ import { theme } from '../theme/Theme'
 import { Section } from "../theme/Container";
 import { TitleAverage, Title, Description } from "../theme/Title";
 import { Divider } from '../theme/Divider';
-import Form from '../Form/Form';
+import Form from '../form/Form';
 import { ImgSrc } from '../theme/SkillsImg';
 
 
@@ -56,7 +56,7 @@ const TitleBig = styled(Title)`
 `
 
 const DescriptionAverage = styled(Description)`
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 14px;
   line-height: 21px;
 `
