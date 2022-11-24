@@ -10,7 +10,7 @@ import Head from '../header/Head';
 import ForMe from '../forMe/ForMe';
 import Experience from '../experience/Experience';
 import Skills from '../skills/Skills';
-import Portfolio from '../portfolio/Portfolio';
+import Portfolio from '../portfol/Portfolio';
 import Prices from '../prices/Prices';
 import Contact from '../contact/Contact';
 

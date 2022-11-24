@@ -21,6 +21,19 @@ const Navbar = styled.div`
   z-index: 500;
 `;
 
+const Bloked = styled.div`
+    position: fixed;
+    visibility: visible; 
+    z-index: 200; 
+    top: 0px; 
+    left: 0px; 
+    width: 100%; 
+    height: 100%; 
+    background-color: #ccc; 
+    opacity: 0.5; 
+`;
+
+
 const MainMenu = () => {
     const node = useRef();
     const { isMenuOpen, toggleMenuMode } = useContext(MenuContext);
@@ -31,12 +44,16 @@ const MainMenu = () => {
     });
 
     return (
-        <header ref={node}>
-            <Navbar>
-                <HamburgerButton />
-            </Navbar>
-            <SideMenu />
-        </header>
+        <>
+            <header ref={node}>
+                <Navbar>
+                    <HamburgerButton />
+                </Navbar>
+                <SideMenu />
+            </header>
+            {isMenuOpen ? <Bloked /> : ''}
+        </>
+
     );
 };
 
